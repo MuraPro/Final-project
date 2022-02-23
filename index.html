@@ -5,8 +5,8 @@
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="css/style.min.css" type="text/css" />
-        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <title>CPS-project</title>
     </head>
 
     <body>
@@ -77,13 +77,9 @@
                     <a class="menu-footer__call" href="#call">
                         <picture><source srcset="img/icons/call.svg" type="image/webp"><img src="img/icons/call.svg" alt="" /></picture>
                     </a>
-                    <button
-                        type="button"
-                        class="menu-footer__chat"
-                        aria-label="Меню"
-                    >
+                    <a class="menu-footer__chat" href="#chat">
                         <picture><source srcset="img/icons/chat.svg" type="image/webp"><img src="img/icons/chat.svg" alt="" /></picture>
-                    </button>
+				    </a>
                     <button
                         type="button"
                         class="menu-footer__profile"
@@ -143,7 +139,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" class="header__link">
+                    <a href="" class="header__link btn_form-call">
                         <picture><source srcset="img/icons/chat.svg" type="image/webp"><img src="img/icons/chat.svg" alt="" /></picture>
                     </a>
                 </li>
@@ -170,7 +166,8 @@
 </header>
 
 <!-- header end -->
- <section class="section-form" id="call">
+ 
+					<section class="section-form" id="call">
 	<div class="section-form__title">
 		<h2>Обратная связь</h2>
 	</div>
@@ -180,6 +177,18 @@
 			<input type="tel" name="userPhone" value="Телефон" onfocus="this.value=''">
 			<input type="email" name="userMail" value="Электронная почта" onfocus="this.value=''">
 			<textarea name="" id="" cols="30" rows="10">Сообщение</textarea>
+			<p>Нажимая <a href="#">“отправить”</a>, вы даете согласие на <span>обработку персональных данных</span> и соглашаетесь с нашей <span>политикой конфиденциальности</span></p>
+			<button type="submit" class="section-form__btn">ОТПРАВИТЬ</button>
+		</form>
+	</div>
+</section>
+                    <section class="section-form form-call" id="chat">
+	<div class="section-form__title form-call-title">
+		<h2>Заказать звонок</h2>
+	</div>
+	<div class="section-form__body">
+		<form action="" method="post" class="userForm">
+			<input type="tel" name="userPhone" value="Телефон" onfocus="this.value=''">
 			<p>Нажимая <a href="#">“отправить”</a>, вы даете согласие на <span>обработку персональных данных</span> и соглашаетесь с нашей <span>политикой конфиденциальности</span></p>
 			<button type="submit" class="section-form__btn">ОТПРАВИТЬ</button>
 		</form>
@@ -739,6 +748,6 @@
             </div>
         </div>
 
-        <script src="js/script.min.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>

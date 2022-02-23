@@ -287,13 +287,20 @@ const burgerBtnClose = document.querySelector('.side-menu__burger');
 const burgerContainer = document.querySelector('.inner-aside')
 const burgerMenu = document.querySelector('.section-container')
 const inner = document.querySelector('.inner')
+
 const formContainer = document.querySelector('.section-form');
-const formContainerX = document.querySelector('.section-form__title');
 const formBtn = document.querySelector('.btn_call');
+const formContainerX = document.querySelector('.section-form__title');
 const formBurgerBtn = document.querySelector('.menu-footer__call');
 const textarea = document.querySelector('textarea');
 
-// открытие закрытие
+const formCallContainer = document.querySelector('.form-call')
+const formCallBtn = document.querySelector('.btn_form-call')
+const formCallX = document.querySelector('.form-call-title');
+const formBurgerCall = document.querySelector('.menu-footer__chat');
+
+// открытие закрытиеb меню
+
 burgerBtnOpen.addEventListener('click', function(event){
 	event.preventDefault();
 	burgerContainer.classList.toggle('active');
@@ -306,6 +313,8 @@ burgerBtnClose.addEventListener('click', function(event){
 	burgerMenu.classList.remove('active');
 	inner.classList.remove('active');
 })
+
+
 // Обратная связь
 formBtn.addEventListener('click', function(event){
 	event.preventDefault();
@@ -329,30 +338,45 @@ textarea.addEventListener('click', function(event){
 	textarea.textContent = '';
 })
 
+
+
+
+// Звонок
+
+
+formCallBtn.addEventListener('click', function(event){
+	event.preventDefault();
+	formCallContainer.classList.toggle('active');
+	inner.classList.toggle('active');
+})
+formBurgerCall.addEventListener('click', function(event){
+	// event.preventDefault();
+	formCallContainer.classList.toggle('active');
+	burgerContainer.classList.remove('active');
+	burgerMenu.classList.remove('active');
+	inner.classList.add('active');
+})
+formCallX.addEventListener('click', function(event){
+	event.preventDefault();
+	formCallContainer.classList.remove('active');
+	inner.classList.remove('active');
+})
+
+
 // клик внеобласти формы
 document.addEventListener( 'click', (e) => {
 	const withinBoundaries = e.composedPath().includes(formContainer);
 	const withinBoundaries1 = e.composedPath().includes(formBurgerBtn);
 	const withinBoundaries2 = e.composedPath().includes(formBtn);
+	const withinBoundaries3 = e.composedPath().includes(burgerBtnOpen);
+	const withinBoundaries4 = e.composedPath().includes(formBurgerCall);
+	const withinBoundaries5 = e.composedPath().includes(formCallBtn);
  
-	if ( ! withinBoundaries && ! withinBoundaries1 &&  ! withinBoundaries2 ) {
+	if ( ! withinBoundaries && ! withinBoundaries1 &&  ! withinBoundaries2 && ! withinBoundaries3 && !withinBoundaries4 && ! withinBoundaries5) {
 		formContainer.classList.remove('active');
 		inner.classList.remove('active');
 	}
 })
-// клик внеобласти меню
-// document.addEventListener( 'click', (e) => {
-// 	const withinBoundaries = e.composedPath().includes(burgerBtnOpen);
-// 	const withinBoundaries1 = e.composedPath().includes(formBtn);
-// 	const withinBoundaries2 = e.composedPath().includes(formBurgerBtn);
-// 	const withinBoundaries3 = e.composedPath().includes(formContainer);
- 
-// 	if ( ! withinBoundaries && !withinBoundaries1 && ! withinBoundaries2 && ! withinBoundaries3) {
-// 		burgerContainer.classList.remove('active');
-// 		burgerMenu.classList.remove('active');
-// 		inner.classList.remove('active');
-// 	}
-// })
 
 
 
@@ -372,13 +396,7 @@ document.addEventListener( 'click', (e) => {
 
 
 
-
-
-
-
-
-//section-slide
-
+//cсекция
 btn.addEventListener("click", function (event) {
   event.preventDefault();
   btn.classList.toggle("active");
@@ -433,46 +451,6 @@ btn2.addEventListener("click", function (event) {
 
 
 
-
-
-
-
-
-
-
-// let btn = document.querySelector("._btn");
-// let block = document.querySelector(".section-box:nth-child(9)");
-// let block2 = document.querySelector(".section-box:nth-child(10)");
-// let block3 = document.querySelector(".section-box:nth-child(11)");
-// let block4 = document.querySelector(".section-box:nth-child(7)");
-// let block5 = document.querySelector(".section-box:nth-child(8)");
-// let sectionBody = document.querySelector(".section-body");
-// let items = document.querySelectorAll(".section-boxss");
-
-// btn.addEventListener("click", function (event) {
-//   event.preventDefault();
-  
-//   if (
-//     block.style.display === "block" &&
-//     block.style.display === "block" &&
-//     block.style.display === "block"
-//   ) {
-//     block.style.display = "none";
-//     block2.style.display = "none";
-//     block3.style.display = "none";
-//     block4.style.display = "none";
-//     block5.style.display = "none";
-//     btn.textContent = "Показать все";
-//   } else {
-//     block.style.display = "block";
-//     block2.style.display = "block";
-//     block3.style.display = "block";
-//     block4.style.display = "block";
-//     block5.style.display = "block";
-//     btn.textContent = "Скрыть";
-//   }
-//   btn.classList.toggle("active");
-// });
 
 
 //Инициализируем Swiper
