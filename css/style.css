@@ -978,11 +978,9 @@ h6 {
           align-items: flex-start;
   background-color: #ffffff;
   min-height: 1957px;
-  -webkit-transition: 0.4s -webkit-transform ease 0s;
-  transition: 0.4s -webkit-transform ease 0s;
-  -o-transition: 0.4s transform ease 0s;
-  transition: 0.4s transform ease 0s;
-  transition: 0.4s transform ease 0s, 0.4s -webkit-transform ease 0s;
+  -webkit-transition: 0.4s all ease 0s;
+  -o-transition: 0.4s all ease 0s;
+  transition: 0.4s all ease 0s;
 }
 
 .section-container.active {
@@ -990,7 +988,6 @@ h6 {
       -ms-transform: translate(0px, 0);
           transform: translate(0px, 0);
   width: 317px;
-  min-height: 800px;
   border-radius: 8px;
   -webkit-box-shadow: 16px 0 25px 15px rgba(0, 0, 0, 0.096);
           box-shadow: 16px 0 25px 15px rgba(0, 0, 0, 0.096);
@@ -1315,7 +1312,7 @@ h6 {
   line-height: 24px;
   letter-spacing: -0.15px;
   text-transform: uppercase;
-  margin: 24px 32px 0 0;
+  margin: 24px 32px 10px 0;
   -ms-flex-item-align: end;
       align-self: flex-end;
   padding-right: 10px;
@@ -1474,7 +1471,7 @@ h6 {
   line-height: 24px;
   letter-spacing: -0.15px;
   text-transform: uppercase;
-  margin: 24px 32px 0 0;
+  margin: 24px 32px 10px 0;
   -ms-flex-item-align: end;
       align-self: flex-end;
   padding-right: 10px;
@@ -1589,6 +1586,10 @@ h6 {
   position: absolute;
   top: 0;
   left: -15px;
+}
+
+.header-text.active {
+  display: block;
 }
 
 .section-nav__list {

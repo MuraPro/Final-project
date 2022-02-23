@@ -282,6 +282,8 @@ const sectionBody = document.querySelector(".section-subSlides");
 const elements = document.querySelectorAll(".section-box");
 const items = document.querySelectorAll(".section-box__elements");
 const boxs = document.querySelectorAll(".section-middle__elements");
+
+
 const burgerBtnOpen = document.querySelector('.header__btn');
 const burgerBtnClose = document.querySelector('.side-menu__burger');
 const burgerContainer = document.querySelector('.inner-aside')
@@ -299,8 +301,19 @@ const formCallBtn = document.querySelector('.btn_form-call')
 const formCallX = document.querySelector('.form-call-title');
 const formBurgerCall = document.querySelector('.menu-footer__chat');
 
-// открытие закрытиеb меню
+const headerText = document.querySelector('.header-text')
+const headerTextBtn = document.querySelector('.section-items__btn')
 
+// текст в header
+headerTextBtn.addEventListener('click', function(event){
+	event.preventDefault();
+	headerText.classList.toggle('active')
+})
+
+
+
+
+// открытие закрытиеb меню
 burgerBtnOpen.addEventListener('click', function(event){
 	event.preventDefault();
 	burgerContainer.classList.toggle('active');
@@ -365,15 +378,19 @@ formCallX.addEventListener('click', function(event){
 
 // клик внеобласти формы
 document.addEventListener( 'click', (e) => {
-	const withinBoundaries = e.composedPath().includes(formContainer);
-	const withinBoundaries1 = e.composedPath().includes(formBurgerBtn);
-	const withinBoundaries2 = e.composedPath().includes(formBtn);
-	const withinBoundaries3 = e.composedPath().includes(burgerBtnOpen);
-	const withinBoundaries4 = e.composedPath().includes(formBurgerCall);
-	const withinBoundaries5 = e.composedPath().includes(formCallBtn);
+	const withinBoundaries = e.composedPath().includes(burgerBtnOpen);
+	const withinBoundaries2 = e.composedPath().includes(burgerContainer);
+	const withinBoundaries3 = e.composedPath().includes(formContainer);
+	const withinBoundaries4 = e.composedPath().includes(formBurgerBtn);
+	const withinBoundaries5 = e.composedPath().includes(formBtn);
+	const withinBoundaries6 = e.composedPath().includes(formBurgerCall);
+	const withinBoundaries7 = e.composedPath().includes(formCallBtn);
+	const withinBoundaries8 = e.composedPath().includes(formCallContainer);
  
-	if ( ! withinBoundaries && ! withinBoundaries1 &&  ! withinBoundaries2 && ! withinBoundaries3 && !withinBoundaries4 && ! withinBoundaries5) {
+	if ( ! withinBoundaries && ! withinBoundaries2 &&  ! withinBoundaries3 && ! withinBoundaries4 && !withinBoundaries5 && ! withinBoundaries6 && ! withinBoundaries7 && ! withinBoundaries8) {
+		burgerMenu.classList.remove('active');
 		formContainer.classList.remove('active');
+		formCallContainer.classList.remove('active');
 		inner.classList.remove('active');
 	}
 })
